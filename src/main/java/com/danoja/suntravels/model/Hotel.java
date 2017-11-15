@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * Created by jt on 1/10/17.
  */
 @Entity
-public class Product {
+public class Hotel {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

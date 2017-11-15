@@ -1,7 +1,7 @@
 package com.danoja.suntravels.services;
 
-import com.danoja.suntravels.Dao.ProductDao;
-import com.danoja.suntravels.model.Product;
+import com.danoja.suntravels.Dao.HotelDao;
+import com.danoja.suntravels.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +12,13 @@ import java.util.List;
  * Created by jt on 1/10/17.
  */
 @Service
-public class ProductService {
+public class HotelService {
 
     @Autowired
-    ProductDao productDao;
+    HotelDao hotelDao;
 
     @Transactional
-    public List<Product> getAllProducts() {
-        return productDao.getAllProducts();
+    public List<Hotel> getAllHotels() {
+        return hotelDao.getAllHotels();
     }
 }

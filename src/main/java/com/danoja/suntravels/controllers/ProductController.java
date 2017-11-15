@@ -1,8 +1,8 @@
 package com.danoja.suntravels.controllers;
 
 
-import com.danoja.suntravels.services.ProductService;
-import com.danoja.suntravels.model.Product;
+import com.danoja.suntravels.services.HotelService;
+import com.danoja.suntravels.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,15 +14,15 @@ import java.util.List;
  * Created by jt on 1/10/17.
  */
 @RestController
-@RequestMapping(value="/product")
+@RequestMapping(value="/hotel")
 public class ProductController {
     @Autowired
-    ProductService productService;
+    HotelService hotelService;
 
-    @RequestMapping(path = "/ghjgn",method = RequestMethod.GET )
-    public List<Product> getAllProducts() {
+    @RequestMapping(path = "/",method = RequestMethod.GET )
+    public List<Hotel> getAllProducts() {
 
         // List<Product> listOfProducts = productService.getAllProducts();
-        return productService.getAllProducts();
+        return hotelService.getAllHotels();
     }
 }
