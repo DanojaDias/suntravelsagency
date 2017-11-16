@@ -16,6 +16,7 @@ import java.util.List;
 public class HotelDao {
     @Autowired
     HotelRepository hotelRepository;
+
     public List<Hotel> getAllHotels(){
         return hotelRepository.findAll();
     }
@@ -24,4 +25,6 @@ public class HotelDao {
     public void addHotel(Hotel hotel) {
         hotelRepository.save(hotel);
     }
+
+
 }

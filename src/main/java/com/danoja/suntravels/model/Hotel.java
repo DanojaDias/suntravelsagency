@@ -19,7 +19,7 @@ public class Hotel {
     private String hotelState;
     private String hotelZip;
     private String hotelStreet;
-    private int status;
+
 
     public Hotel()
     {
@@ -93,16 +93,6 @@ public class Hotel {
     public void setHotelStreet( String hotelStreet )
     {
         this.hotelStreet = hotelStreet;
-    }
-
-    public int getStatus()
-    {
-        return this.status;
-    }
-
-    public void setStatus( int status )
-    {
-        this.status = status;
     }
 
 }

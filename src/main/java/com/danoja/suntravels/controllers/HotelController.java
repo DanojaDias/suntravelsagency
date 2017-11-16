@@ -1,6 +1,7 @@
 package com.danoja.suntravels.controllers;
 
 
+import com.danoja.suntravels.model.Contract;
 import com.danoja.suntravels.services.HotelService;
 import com.danoja.suntravels.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,31 +16,27 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value="/hotel")
-public class Controller {
+public class HotelController {
     @Autowired
     HotelService hotelService;
 
     @RequestMapping(path = "/",method = RequestMethod.GET )
     public List<Hotel> getAllHotels() {
-
-        // List<Product> listOfProducts = productService.getAllProducts();
         return hotelService.getAllHotels();
     }
 
-    @RequestMapping(path = "/add",method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(path = "/add-hotel",method = RequestMethod.POST)
     public ResponseEntity<String> addHotel(@RequestBody Hotel hotel) {
-
-        // List<Product> listOfProducts = productService.getAllProducts();
-        //return hotelService.getAllHotels();
-
-
-
         hotelService.addHotel(hotel);
 
-        if (hotel == null)
+        if (hotel == null) {
             return ResponseEntity.noContent().build();
-
+        }
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+
+
+
+
 }

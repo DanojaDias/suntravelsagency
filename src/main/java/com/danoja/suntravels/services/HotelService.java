@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-/**
- * Created by jt on 1/10/17.
- */
 @Service
 public class HotelService {
 
@@ -27,4 +24,6 @@ public class HotelService {
     public void addHotel(Hotel hotel) {
         hotelDao.addHotel(hotel);
     }
+
+
 }
