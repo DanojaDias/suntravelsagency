@@ -1,53 +1,108 @@
 package com.danoja.suntravels.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
  * Created by jt on 1/10/17.
  */
 @Entity
+@Table(name = "DD_HOTEL")
 public class Hotel {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-    private String description;
-    private BigDecimal price;
-    private String imageUrl;
+    private long hotelId;
+    private String hotelName;
+    private String hotelTp;
+    private String hotelCity;
+    private String hotelState;
+    private String hotelZip;
+    private String hotelStreet;
+    private int status;
 
-    public Long getId() {
-        return id;
+    public Hotel()
+    {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public long getHotelId()
+    {
+        return this.hotelId;
     }
 
-    public String getDescription() {
-        return description;
+    public void setHotelId( long hotelId )
+    {
+        this.hotelId = hotelId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getHotelName()
+    {
+        return this.hotelName;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public void setHotelName( String hotelName )
+    {
+        this.hotelName = hotelName;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public String getHotelTp()
+    {
+        return this.hotelTp;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public void setHotelTp( String hotelTp )
+    {
+        this.hotelTp = hotelTp;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public String getHotelCity()
+    {
+        return this.hotelCity;
     }
+
+    public void setHotelCity( String hotelCity )
+    {
+        this.hotelCity = hotelCity;
+    }
+
+    public String getHotelState()
+    {
+        return this.hotelState;
+    }
+
+    public void setHotelState( String hotelState )
+    {
+        this.hotelState = hotelState;
+    }
+
+    public String getHotelZip()
+    {
+        return this.hotelZip;
+    }
+
+    public void setHotelZip( String hotelZip )
+    {
+        this.hotelZip = hotelZip;
+    }
+
+    public String getHotelStreet()
+    {
+        return this.hotelStreet;
+    }
+
+    public void setHotelStreet( String hotelStreet )
+    {
+        this.hotelStreet = hotelStreet;
+    }
+
+    public int getStatus()
+    {
+        return this.status;
+    }
+
+    public void setStatus( int status )
+    {
+        this.status = status;
+    }
+
 }

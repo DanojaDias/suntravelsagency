@@ -21,4 +21,10 @@ public class HotelService {
     public List<Hotel> getAllHotels() {
         return hotelDao.getAllHotels();
     }
+
+
+
+    public void addHotel(Hotel hotel) {
+        hotelDao.addHotel(hotel);
+    }
 }
