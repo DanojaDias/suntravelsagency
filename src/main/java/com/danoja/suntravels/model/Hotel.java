@@ -1,5 +1,7 @@
 package com.danoja.suntravels.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
@@ -21,8 +23,13 @@ public class Hotel {
     private String hotelZip;
     private String hotelStreet;
 
-//    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
-//    private Set<Contract> contracts;
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
+    @JsonIgnore
+    private Set<Contract> contracts;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
+    @JsonIgnore
+    private Set<RoomType> roomType;
 
 
     public Hotel()
@@ -100,11 +107,19 @@ public class Hotel {
     }
 
 
-//    public Set<Contract> getContracts() {
-//        return contracts;
-//    }
-//
-//    public void setContracts(Set<Contract> contracts) {
-//        this.contracts = contracts;
-//    }
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
+    }
+
+    public Set<RoomType> getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(Set<RoomType> roomType) {
+        this.roomType = roomType;
+    }
 }

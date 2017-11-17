@@ -8,6 +8,7 @@ public class Contract{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name = "CONTRACT_ID")
  	private long contractId;
 
     @ManyToOne
@@ -16,6 +17,7 @@ public class Contract{
 	private float markup;
 	private Timestamp validFrom;
 	private Timestamp validTo;
+
 
 	public Contract()
 	{
@@ -51,7 +53,6 @@ public class Contract{
 		this.validTo = validTo;
 	}
 
-
 	public Hotel getHotel()
 	{
 		return this.hotel;
@@ -71,4 +72,6 @@ public class Contract{
 	{
 		this.markup = markup;
 	}
+
+
 }

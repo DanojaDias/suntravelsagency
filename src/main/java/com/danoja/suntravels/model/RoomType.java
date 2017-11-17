@@ -8,6 +8,7 @@ public class RoomType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ROOM_TYPE_ID")
     private long roomTypeId;
     private String roomTypeName;
     private String roomTypeDesc;
@@ -15,6 +16,7 @@ public class RoomType {
     @ManyToOne
     @JoinColumn(name = "HOTEL_ID")
     private Hotel hotel;
+
 
     public RoomType()
     {
@@ -56,4 +58,6 @@ public class RoomType {
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
+
+
 }
