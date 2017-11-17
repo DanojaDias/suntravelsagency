@@ -1,8 +1,8 @@
 package com.danoja.suntravels.controllers;
 
-import com.danoja.suntravels.model.Contract;
-import com.danoja.suntravels.model.Hotel;
+import com.danoja.suntravels.model.RoomType;
 import com.danoja.suntravels.services.ContractService;
+import com.danoja.suntravels.services.RoomTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,22 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/contract")
-public class ContractController {
+@RequestMapping(value="/room-type")
+public class RoomTypeController {
 
     @Autowired
-    ContractService contractService;
+    RoomTypeService roomtypeService;
 
     @RequestMapping(path = "/",method = RequestMethod.GET )
-    public List<Contract> getAllContracts() {
-        return contractService.getAllContracts();
+    public List<RoomType> getAllRoomTypes() {
+        return roomtypeService.getAllRoomTypes();
     }
 
-    @RequestMapping(path = "/add-contract",method = RequestMethod.POST)
-    public ResponseEntity<String> addContract(@RequestBody Contract contract) {
-        contractService.addContract(contract);
+    @RequestMapping(path = "/add-room-type",method = RequestMethod.POST)
+    public ResponseEntity<String> addRoomType(@RequestBody RoomType roomType) {
+        roomtypeService.addRoomType(roomType);
 
-        if (contract == null) {
+        if (roomType == null) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.status(HttpStatus.CREATED).build();

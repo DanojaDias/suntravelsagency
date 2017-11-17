@@ -21,8 +21,8 @@ public class Hotel {
     private String hotelZip;
     private String hotelStreet;
 
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
-    private Set<Contract> contracts;
+//    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
+//    private Set<Contract> contracts;
 
 
     public Hotel()
@@ -100,11 +100,11 @@ public class Hotel {
     }
 
 
-    public Set<Contract> getContracts() {
-        return contracts;
-    }
-
-    public void setContracts(Set<Contract> contracts) {
-        this.contracts = contracts;
-    }
+//    public Set<Contract> getContracts() {
+//        return contracts;
+//    }
+//
+//    public void setContracts(Set<Contract> contracts) {
+//        this.contracts = contracts;
+//    }
 }

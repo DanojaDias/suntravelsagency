@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Component
 public class ContractDao {
@@ -15,5 +16,9 @@ public class ContractDao {
     @Transactional
     public void addContract(Contract contract) {
         contractRepository.save(contract);
+    }
+
+    public List<Contract> getAllContracts() {
+        return contractRepository.findAll();
     }
 }

@@ -1,0 +1,27 @@
+package com.danoja.suntravels.services;
+
+import com.danoja.suntravels.Dao.RoomTypeDetailsDao;
+import com.danoja.suntravels.model.RoomTypeDetails;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Service
+public class RoomTypeDetailsService {
+    @Autowired
+    RoomTypeDetailsDao roomTypeDetailsDao;
+
+    @Transactional
+    public List<RoomTypeDetails> getAllRoomTypeDetails() {
+        return roomTypeDetailsDao.getAllRoomTypeDetails();
+    }
+
+
+
+    public void addRoomTypeDetails(RoomTypeDetails roomTypeDetails) {
+        roomTypeDetailsDao.addRoomTypeDetails(roomTypeDetails);
+    }
+
+}
