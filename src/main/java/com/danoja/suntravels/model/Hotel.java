@@ -2,6 +2,7 @@ package com.danoja.suntravels.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 /**
  * Created by jt on 1/10/17.
@@ -19,6 +20,9 @@ public class Hotel {
     private String hotelState;
     private String hotelZip;
     private String hotelStreet;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )
+    private Set<Contract> contracts;
 
 
     public Hotel()
@@ -95,4 +99,12 @@ public class Hotel {
         this.hotelStreet = hotelStreet;
     }
 
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
+    }
 }

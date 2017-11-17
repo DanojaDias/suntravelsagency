@@ -9,7 +9,10 @@ public class Contract{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
  	private long contractId;
-	private long hotelId;
+
+    @ManyToOne
+    @JoinColumn(name = "HOTEL_ID")
+	private Hotel hotel;
 	private float markup;
 	private Timestamp validFrom;
 	private Timestamp validTo;
@@ -48,14 +51,15 @@ public class Contract{
 		this.validTo = validTo;
 	}
 
-	public long getHotelId()
+
+	public Hotel getHotel()
 	{
-		return this.hotelId;
+		return this.hotel;
 	}
 
-	public void setHotelId( long hotelId )
+	public void setHotel( Hotel hotel )
 	{
-		this.hotelId = hotelId;
+		this.hotel = hotel;
 	}
 
 	public float getMarkup()
