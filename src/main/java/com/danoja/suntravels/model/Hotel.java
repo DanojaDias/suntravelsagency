@@ -16,11 +16,23 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long hotelId;
+
+    @Column(name = "HOTEL_NAME")
     private String hotelName;
+
+    @Column(name = "HOTEL_TP")
     private String hotelTp;
+
+    @Column(name="HOTEL_CITY")
     private String hotelCity;
+
+    @Column(name="HOTEL_STATE")
     private String hotelState;
+
+    @Column(name="HOTEL_ZIP")
     private String hotelZip;
+
+    @Column(name="HOTEL_STREET")
     private String hotelStreet;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL )

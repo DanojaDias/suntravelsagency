@@ -1,4 +1,5 @@
 package com.danoja.suntravels.model;
+
 import javax.persistence.*;
 import java.sql.*;
 
@@ -14,10 +15,15 @@ public class Contract{
     @ManyToOne
     @JoinColumn(name = "HOTEL_ID")
 	private Hotel hotel;
-	private float markup;
-	private Timestamp validFrom;
-	private Timestamp validTo;
 
+    @Column(name ="MARKUP")
+	private float markup;
+
+    @Column(name = "VALID_FROM")
+	private Date validFrom;
+
+    @Column(name = "VALID_TO")
+	private Date validTo;
 
 	public Contract()
 	{
@@ -33,22 +39,22 @@ public class Contract{
 		this.contractId = contractId;
 	}
 
-	public Timestamp getValidFrom()
+	public Date getValidFrom()
 	{
 		return this.validFrom;
 	}
 
-	public void setValidFrom( Timestamp validFrom )
+	public void setValidFrom( Date validFrom )
 	{
 		this.validFrom = validFrom;
 	}
 
-	public Timestamp getValidTo()
+	public Date getValidTo()
 	{
 		return this.validTo;
 	}
 
-	public void setValidTo( Timestamp validTo )
+	public void setValidTo( Date validTo )
 	{
 		this.validTo = validTo;
 	}

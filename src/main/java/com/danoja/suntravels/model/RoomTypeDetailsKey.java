@@ -6,8 +6,11 @@ import java.io.Serializable;
 
 @Embeddable
 public class RoomTypeDetailsKey implements Serializable {
+
+
     @Column(name = "CONTRACT_ID")
     private Long contractId;
+
     @Column(name = "ROOM_TYPE_ID")
     private Long roomTypeId;
 

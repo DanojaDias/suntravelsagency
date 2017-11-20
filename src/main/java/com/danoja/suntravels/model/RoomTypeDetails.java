@@ -1,5 +1,7 @@
 package com.danoja.suntravels.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 
@@ -8,11 +10,12 @@ import javax.persistence.*;
 public class RoomTypeDetails {
 
     @EmbeddedId
-    private RoomTypeDetailsKey roomTypeDetailsKey;
+    private RoomTypeDetailsKey roomTypeDetailsKey = new RoomTypeDetailsKey();
+
 
     @MapsId("contractId")
     @ManyToOne
-    @JoinColumn(name = "CONTRACT_ID")
+    @JoinColumn(name = "CONTRACT_ID", referencedColumnName = "CONTRACT_ID", insertable = false, updatable = false)
     private Contract contract;
 
     @MapsId("roomTypeId")
@@ -20,13 +23,17 @@ public class RoomTypeDetails {
     @JoinColumn(name = "ROOM_TYPE_ID", referencedColumnName = "ROOM_TYPE_ID", insertable = false, updatable = false)
     private RoomType roomType;
 
-
-
+    @Column(name ="MAX_ADULTS")
     private long maxAdults;
-    private int rate;
-    private long numberOfTotallRooms;
-    private long numberOfFreeRooms;
 
+    @Column(name="RATE")
+    private int rate;
+
+    @Column(name="NUMBER_OF_TOTALL_ROOMS")
+    private long numberOfTotallRooms;
+
+    @Column(name = "NUMBER_OF_FREE_ROOMS")
+    private long numberOfFreeRooms;
 
     public RoomTypeDetails()
     {
@@ -48,7 +55,7 @@ public class RoomTypeDetails {
         return this.contract.getContractId();
     }
 
-    public void setContract( Long contractId )
+    public void setContractId( Long contractId )
     {
         this.roomTypeDetailsKey.setContractId(contractId);
         this.contract.setContractId(contractId);
@@ -72,6 +79,14 @@ public class RoomTypeDetails {
 
     public Contract getContract() {
         return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
+
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 
     public long getMaxAdults()
