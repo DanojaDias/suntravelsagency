@@ -3,6 +3,7 @@ package com.danoja.suntravels.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,7 +27,7 @@ public class RoomType {
 
     @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL )
     @JsonIgnore
-    private Set<RoomType> roomType;
+    private List<RoomType> roomType;
 
     public RoomType()
     {
@@ -61,11 +62,11 @@ public class RoomType {
         this.roomTypeDesc = roomTypeDesc;
     }
 
-    public Set<RoomType> getRoomType() {
+    public List<RoomType> getRoomType() {
         return roomType;
     }
 
-    public void setRoomType(Set<RoomType> roomTypes) {
+    public void setRoomType(List<RoomType> roomTypes) {
         this.roomType = roomTypes;
     }
 

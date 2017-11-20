@@ -3,12 +3,8 @@ package com.danoja.suntravels.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Set;
 
-/**
- * Created by jt on 1/10/17.
- */
 @Entity
 @Table(name = "DD_HOTEL")
 public class Hotel {
@@ -117,7 +113,6 @@ public class Hotel {
     {
         this.hotelStreet = hotelStreet;
     }
-
 
     public Set<Contract> getContracts() {
         return contracts;

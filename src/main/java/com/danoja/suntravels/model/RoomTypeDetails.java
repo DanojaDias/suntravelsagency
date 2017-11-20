@@ -24,16 +24,16 @@ public class RoomTypeDetails {
     private RoomType roomType;
 
     @Column(name ="MAX_ADULTS")
-    private long maxAdults;
+    private int maxAdults;
 
     @Column(name="RATE")
     private int rate;
 
     @Column(name="NUMBER_OF_TOTALL_ROOMS")
-    private long numberOfTotallRooms;
+    private int numberOfTotallRooms;
 
     @Column(name = "NUMBER_OF_FREE_ROOMS")
-    private long numberOfFreeRooms;
+    private int numberOfFreeRooms;
 
     public RoomTypeDetails()
     {
@@ -94,7 +94,7 @@ public class RoomTypeDetails {
         return this.maxAdults;
     }
 
-    public void setMaxAdults( long maxAdults )
+    public void setMaxAdults( int maxAdults )
     {
         this.maxAdults = maxAdults;
     }
@@ -114,7 +114,7 @@ public class RoomTypeDetails {
         return this.numberOfTotallRooms;
     }
 
-    public void setNumberOfTotallRooms( long numberOfTotallRooms )
+    public void setNumberOfTotallRooms( int numberOfTotallRooms )
     {
         this.numberOfTotallRooms = numberOfTotallRooms;
     }
@@ -124,7 +124,7 @@ public class RoomTypeDetails {
         return this.numberOfFreeRooms;
     }
 
-    public void setNumberOfFreeRooms( long numberOfFreeRooms )
+    public void setNumberOfFreeRooms( int numberOfFreeRooms )
     {
         this.numberOfFreeRooms = numberOfFreeRooms;
     }

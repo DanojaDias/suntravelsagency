@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.util.List;
 
-/**
- * Created by jt on 1/10/17.
- */
+
 @Component
 public class HotelDao {
     @Autowired
@@ -25,6 +23,4 @@ public class HotelDao {
     public void addHotel(Hotel hotel) {
         hotelRepository.save(hotel);
     }
-
-
 }
