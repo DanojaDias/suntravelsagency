@@ -33,22 +33,22 @@ public class RoomRequirement {
 
     @Column(name = "NUMBER_OF_NIGHTS")
     private int numberOfNights;
-
-    @OneToMany(mappedBy = "roomRequirement", cascade = CascadeType.ALL )
-    @JsonIgnore
-    private Set<RoomRequirement> roomRequirement;
+//
+//    @OneToMany(mappedBy = "roomRequirement", cascade = CascadeType.ALL )
+//    @JsonIgnore
+//    private Set<RoomRequirement> roomRequirement;
 
 
     public RoomRequirement() {
     }
 
-    public Set<RoomRequirement> getRoomRequirement() {
-        return roomRequirement;
-    }
-
-    public void setRoomRequirement(Set<RoomRequirement> roomRequirement) {
-        this.roomRequirement = roomRequirement;
-    }
+//    public Set<RoomRequirement> getRoomRequirement() {
+//        return roomRequirement;
+//    }
+//
+//    public void setRoomRequirement(Set<RoomRequirement> roomRequirement) {
+//        this.roomRequirement = roomRequirement;
+//    }
 
     public int getNumberOfNights() {
         return numberOfNights;

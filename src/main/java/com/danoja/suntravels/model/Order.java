@@ -10,25 +10,26 @@ import java.util.Set;
 @Table(name = "DD_ORDER")
 public class Order implements Serializable {
 
-    @EmbeddedId
-    private OrderCustomerKey orderCustomerKey = new OrderCustomerKey();
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ORDER_ID")
+    private long orderId;
 
     @Column(name = "TOTAL_PRICE")
     private int totalPrice;
 
-    @MapsId("customerId")
+
     @ManyToOne
-    @JoinColumn(name = "CUSTOMER_ID")
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName="CUST_NIC")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL )
-    @JsonIgnore
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL )
+//    @JsonIgnore
+//    private Set<Order> orders;
 
     public Order()
     {
     }
-
 
     public Customer getCustomer() {
         return customer;
@@ -38,33 +39,24 @@ public class Order implements Serializable {
         this.customer = customer;
     }
 
-    public OrderCustomerKey getOrderCustomerKey() {
-        return orderCustomerKey;
+    public long getCustomerId()
+    {
+        return customer.getCustNic();
     }
 
-    public Long getCustomerId()
+    public void setCustomerId( long customerId )
     {
-        return this.customer.getCustNic();
-    }
-
-    public void setCustomerId( Long customerId )
-    {
-        this.orderCustomerKey.setCustomerId(customerId);
         this.customer.setCustNic(customerId);
-    }
-
-    public void setOrderCustomerKey(OrderCustomerKey orderCustomerKey) {
-        this.orderCustomerKey = orderCustomerKey;
     }
 
     public long getOrderId()
     {
-        return this.orderCustomerKey.getOrderId();
+        return orderId;
     }
 
     public void setOrderId( long orderId )
     {
-        this.orderCustomerKey.setOrderId(orderId);
+        this.orderId = orderId;
     }
 
     public int getTotalPrice()

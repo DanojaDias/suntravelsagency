@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/room-requirement")
+@RequestMapping(value="/order-room-requirement")
 public class OrderRoomRequirementController {
     @Autowired
     OrderRoomRequirementService orderRoomRequirementService;
@@ -23,7 +23,7 @@ public class OrderRoomRequirementController {
         return orderRoomRequirementService.getAllOrderRoomRequirements();
     }
 
-    @RequestMapping(path = "/add-orderRoomRequirement",method = RequestMethod.POST)
+    @RequestMapping(path = "/add-order-room-requirement",method = RequestMethod.POST)
     public ResponseEntity<String> addOrderRoomRequirement(@RequestBody OrderRoomRequirement orderRoomRequirement) {
         orderRoomRequirementService.addOrderRoomRequirement(orderRoomRequirement);
 

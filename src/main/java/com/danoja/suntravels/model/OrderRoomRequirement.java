@@ -13,16 +13,13 @@ public class OrderRoomRequirement {
 
     @MapsId("orderId")
     @ManyToOne
-    @JoinColumns({@JoinColumn(name = "ORDER_ID"), @JoinColumn(name = "CUSTOMER_ID")})
+    @JoinColumn(name = "ORDER_ID", referencedColumnName="ORDER_ID",  insertable=false, updatable=false)
     private Order order;
 
     @MapsId("roomRequirementId")
     @ManyToOne
     @JoinColumn(name = "ROOM_REQUIREMENT_ID")
     private RoomRequirement roomRequirement;
-
-
-
 
     public OrderRoomRequirement()
     {
