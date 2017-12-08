@@ -20,6 +20,10 @@ public class HotelService {
     }
 
 
+    public Hotel getHotelById(Long id) {
+        return hotelDao.getHotelById(id);
+    }
+
 
     public void addHotel(Hotel hotel) {
         hotelDao.addHotel(hotel);

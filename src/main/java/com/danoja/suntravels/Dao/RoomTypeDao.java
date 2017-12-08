@@ -1,5 +1,6 @@
 package com.danoja.suntravels.Dao;
 
+import com.danoja.suntravels.model.Hotel;
 import com.danoja.suntravels.model.RoomType;
 import com.danoja.suntravels.repositories.RoomTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,14 @@ public class RoomTypeDao {
     }
 
     @Transactional
-    public void addRoomType(RoomType roomType) {
+    public long addRoomType( RoomType roomType) {
         roomTypeRepository.save(roomType);
+        roomTypeRepository.flush();
+        return roomType.getRoomTypeId();
+
+    }
+
+    public RoomType getRoomTypeById( Long id){
+        return roomTypeRepository.findOne(id);
     }
 }

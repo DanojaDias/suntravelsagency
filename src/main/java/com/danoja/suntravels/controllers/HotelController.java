@@ -21,6 +21,11 @@ public class HotelController {
         return hotelService.getAllHotels();
     }
 
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET )
+    public Hotel getHotelById(@PathVariable Long id) {
+        return hotelService.getHotelById(id);
+    }
+
     @RequestMapping(path = "/add-hotel",method = RequestMethod.POST)
     public ResponseEntity<String> addHotel(@RequestBody Hotel hotel) {
         hotelService.addHotel(hotel);

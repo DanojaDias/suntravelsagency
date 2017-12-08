@@ -1,11 +1,13 @@
 package com.danoja.suntravels.controllers;
 
+import com.danoja.suntravels.model.Contract;
 import com.danoja.suntravels.model.RoomType;
 import com.danoja.suntravels.services.ContractService;
 import com.danoja.suntravels.services.RoomTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,12 +28,12 @@ public class RoomTypeController {
     }
 
     @RequestMapping(path = "/add-room-type",method = RequestMethod.POST)
-    public ResponseEntity<String> addRoomType(@RequestBody RoomType roomType) {
-        roomtypeService.addRoomType(roomType);
+    public long addRoomType(@RequestBody RoomType roomType) {
+        return roomtypeService.addRoomType(roomType);
+    }
 
-        if (roomType == null) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    @RequestMapping(path = "/{roomTypeId}",method = RequestMethod.GET )
+    public RoomType getRoomTypeById( @PathVariable Long roomTypeId) {
+        return roomtypeService.getRoomTypeById(roomTypeId);
     }
 }

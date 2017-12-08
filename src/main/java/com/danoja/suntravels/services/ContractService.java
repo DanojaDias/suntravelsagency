@@ -23,4 +23,8 @@ public class ContractService {
     public List<Contract> getAllContracts() {
         return contractDao.getAllContracts();
     }
+
+    public List<Contract> getContractById(Long HotelId) {
+        return contractDao.getContractById(HotelId);
+    }
 }

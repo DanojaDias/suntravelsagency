@@ -20,8 +20,12 @@ public class RoomTypeService {
 
 
 
-    public void addRoomType(RoomType roomType) {
-        roomTypeDao.addRoomType(roomType);
+    public long addRoomType(RoomType roomType) {
+        return roomTypeDao.addRoomType(roomType);
+    }
+
+    public RoomType getRoomTypeById(Long id) {
+        return roomTypeDao.getRoomTypeById(id);
     }
 
 }

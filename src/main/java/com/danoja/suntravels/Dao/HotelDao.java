@@ -19,6 +19,12 @@ public class HotelDao {
         return hotelRepository.findAll();
     }
 
+    public Hotel getHotelById(Long id){
+        return hotelRepository.findOne(id);
+    }
+
+
+
     @Transactional
     public void addHotel(Hotel hotel) {
         hotelRepository.save(hotel);

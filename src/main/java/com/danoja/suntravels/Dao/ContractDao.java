@@ -21,4 +21,8 @@ public class ContractDao {
     public List<Contract> getAllContracts() {
         return contractRepository.findAll();
     }
+
+    public List<Contract> getContractById(Long hotelId) {
+        return contractRepository.getContractById(hotelId);
+    }
 }
